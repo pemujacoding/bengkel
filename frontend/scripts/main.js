@@ -21,6 +21,7 @@ function initBengkelApp() {
     bsTransaksiFormModal = new bootstrap.Modal(document.getElementById('transaksiFormModal'));
     bsSparepartServiceModal = new bootstrap.Modal(document.getElementById('sparepartServiceModal'));
     bsJadwalFormModal = new bootstrap.Modal(document.getElementById('jadwalFormModal'));
+    bsKendaraanFormModal = new bootstrap.Modal(document.getElementById('kendaraanFormModal'))
 
     loadPelanggan();
     loadMekanik();

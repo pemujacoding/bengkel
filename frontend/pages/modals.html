@@ -10,7 +10,7 @@
                     <input type="hidden" id="form-id">
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Nama Lengkap Customer</label>
-                        <input type="text" id="form-name" class="form-control" required placeholder="Masukkan nama sesuai KTP">
+                        <input type="text" id="form-nama" class="form-control" required placeholder="Masukkan nama sesuai KTP">
                     </div>
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Nomor Telepon aktif</label>
@@ -242,7 +242,6 @@
                         <div class="dropdown-menu w-100 p-2" aria-labelledby="dropdownSdBtn" style="max-height: 250px; overflow-y: auto;">
                             <input type="text" class="form-control mb-2" id="searchSdInput" placeholder="Ketik nama atau merk sparepart...">
                             <ul class="list-unstyled m-0 p-0" id="list-sd-options">
-                                <!-- Diisi lewat JS -->
                             </ul>
                         </div>
                     </div>
@@ -287,6 +286,46 @@
                     <div class="mb-3">
                         <label class="form-label fw-semibold">Deskripsi</label>
                         <textarea id="form-j-deskripsi" class="form-control" rows="2" placeholder="Catatan atau keterangan jadwal"></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Batal</button>
+                    <button type="submit" class="btn btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="kendaraanFormModal" data-bs-backdrop="static" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-dark text-white">
+                <h5 class="modal-title" id="modal-title">Form Kendaraan</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form id="form-k-kendaraan" onsubmit="saveKendaraan(event)">
+                <div class="modal-body">
+                    <input type="hidden" id="form-k-id">
+                    <input type="hidden" id="form-k-pelanggan">
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Merk</label>
+                        <input type="text" id="form-k-merk" class="form-control" required placeholder="Contoh : Honda Beat">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Jenis Kendaraan</label>
+                        <select id="form-k-jenis" class="form-control" required>
+                            <option value="motor">Motor</option>
+                            <option value="mobil">Mobil</option>
+                            <option value="sepeda">Sepeda</option>
+                            <option value="sepeda listrik">Sepeda Listrik</option>
+                            <option value="truk">Truk</option>
+                            <option value="mini van">Mini Van</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label fw-semibold">Plat</label>
+                        <input type="text" id="form-k-plat" class="form-control" required placeholder="Contoh: ADXXX">
                     </div>
                 </div>
                 <div class="modal-footer">
