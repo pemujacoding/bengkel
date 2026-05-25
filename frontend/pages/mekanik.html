@@ -1,0 +1,53 @@
+<div id="view-mekanik-list" class="view-panel container-fluid d-none">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold m-0 text-dark">Montir & Tim Mekanik</h2>
+            <p class="text-muted m-0 small">Daftar montir ahli penanggung jawab servis kendaraan</p>
+        </div>
+        <button class="btn btn-primary shadow-sm" onclick="openMekanikModal()">＋ Tambah Mekanik</button>
+    </div>
+
+    <div class="card shadow-sm border-light mb-4">
+        <div class="card-body bg-light rounded p-3">
+            <div class="input-group">
+                <input type="text" id="search-mekanik" class="form-control" placeholder="Cari montir berdasarkan ID atau Nama...">
+                <button class="btn btn-outline-secondary px-4" type="button" onclick="handleSearchMekanik()">Cari Montir</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-light">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle m-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th style="width: 15%;">ID Mekanik</th>
+                        <th style="width: 55%;">Nama Mekanik</th>
+                        <th style="width: 30%;" class="text-center">Aksi Kendali</th>
+                    </tr>
+                </thead>
+                <tbody id="list-mekanik-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="view-mekanik-detail" class="view-panel container-fluid d-none">
+    <div class="mb-4">
+        <button class="btn btn-sm btn-outline-secondary px-3 mb-2" onclick="switchView('mekanik-list')">← Kembali ke Tim</button>
+        <h2 id="det-m-title" class="fw-bold text-dark m-0">Profil Mekanik</h2>
+    </div>
+
+    <div class="card shadow-sm border-light" style="max-width: 600px;">
+        <div class="card-header bg-dark text-white fw-semibold">Informasi Kontak Karyawan</div>
+        <div class="card-body">
+            <table class="table table-borderless my-2">
+                <tr><td class="text-muted" style="width: 30%;">ID Pegawai</td><td>: <span id="det-m-id" class="badge bg-secondary"></span></td></tr>
+                <tr><td class="text-muted">Nama Lengkap</td><td>: <strong id="det-m-nama"></strong></td></tr>
+                <tr><td class="text-muted">No. Telepon</td><td>: <span id="det-m-telp"></span></td></tr>
+                <tr><td class="text-muted">Alamat Domisili</td><td>: <span id="det-m-alamat" class="text-secondary"></span></td></tr>
+            </table>
+        </div>
+    </div>
+</div>

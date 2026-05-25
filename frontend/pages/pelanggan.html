@@ -1,0 +1,73 @@
+<div id="view-pelanggan-list" class="view-panel container-fluid d-none">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <div>
+            <h2 class="fw-bold m-0 text-dark">Daftar Pelanggan Tetap</h2>
+            <p class="text-muted m-0 small">Manajemen database customer bengkel resmi</p>
+        </div>
+        <button class="btn btn-primary shadow-sm" onclick="openAddModal()">＋ Tambah Pelanggan</button>
+    </div>
+
+    <div class="card shadow-sm border-light mb-4">
+        <div class="card-body bg-light rounded p-3">
+            <div class="input-group">
+                <input type="text" id="search-input" class="form-control" placeholder="Cari berdasarkan ID atau Nama Pelanggan...">
+                <button class="btn btn-outline-secondary px-4" type="button" onclick="handleSearch()">Cari Data</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card shadow-sm border-light">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle m-0">
+                <thead class="table-dark">
+                    <tr>
+                        <th style="width: 15%;">ID Pelanggan</th>
+                        <th style="width: 55%;">Nama Lengkap</th>
+                        <th style="width: 30%;" class="text-center">Aksi Kendali</th>
+                    </tr>
+                </thead>
+                <tbody id="list-pelanggan-body">
+                    </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="view-detail-page" class="view-panel container-fluid d-none">
+    <div class="mb-4">
+        <button class="btn btn-sm btn-outline-secondary px-3 mb-2" onclick="switchView('pelanggan-list')">← Kembali ke List</button>
+        <h2 id="det-page-title" class="fw-bold text-dark m-0">Profil Pelanggan</h2>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-5">
+            <div class="card shadow-sm border-light h-100">
+                <div class="card-header bg-dark text-white fw-semibold">Biodata Customer</div>
+                <div class="card-body">
+                    <table class="table table-sm table-borderless my-2" style="font-size: 0.95rem;">
+                        <tr><td class="text-muted" style="width: 35%;">ID Register</td><td>: <span id="det-p-id" class="badge bg-secondary"></span></td></tr>
+                        <tr><td class="text-muted">Nama Member</td><td>: <strong id="det-p-nama" class="text-dark"></strong></td></tr>
+                        <tr><td class="text-muted">No. Telepon</td><td>: <span id="det-p-telp"></span></td></tr>
+                        <tr><td class="text-muted">Alamat Rumah</td><td>: <span id="det-p-alamat" class="text-secondary"></span></td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-7">
+            <div class="card shadow-sm border-light h-100">
+                <div class="card-header bg-primary text-white fw-semibold">Kepemilikan Unit Kendaraan (Klik untuk Cek History)</div>
+                <ul id="det-p-kendaraan-list" class="list-group list-group-flush">
+                    </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="sub-riwayat-area" class="mt-4 d-none">
+        <div class="card shadow-sm border-primary-subtle">
+            <div id="sub-riwayat-title" class="card-header bg-primary-subtle text-primary-emphasis fw-semibold">Riwayat Service Kendaraan</div>
+            <div id="det-k-riwayat-list" class="list-group list-group-flush">
+                </div>
+        </div>
+    </div>
+</div>
