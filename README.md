@@ -6,4 +6,4 @@
 - buka folder backend di terminal (cd backend)
 - ketik node app.js
 - setelah itu buka folder frontend
-- cari index.js klik kanan start live server
+- cari index.html klik kanan start live server
