@@ -1,4 +1,4 @@
-const SparepartDigunakanModel = require("../models/SparepartDigunakanModel");
+const SparepartDigunakanModel = require("../models/sparepartDigunakanModel");
 const name = "Sparepart Digunakan";
 
 const getAll = async (req, res) => {
