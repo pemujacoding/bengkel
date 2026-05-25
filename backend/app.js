@@ -4,7 +4,6 @@ const sequelize = require("./config/database");
 
 const app = express();
 
-// 1. CORS harus di atas sebelum route
 app.use(cors());
 app.use(express.json());
 
@@ -14,13 +13,9 @@ app.get("/", (req, res) => {
 });
 
 const dataRoutes = require("./routes/bengkelRoutes");
-
-// Kita pasang ke Express dengan prefix '/api'
 app.use("/data", dataRoutes);
-// --------------------------------
 
-// 3. Database Sync & Listen
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 sequelize.sync()
   .then(() => {
