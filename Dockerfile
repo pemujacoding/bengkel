@@ -10,4 +10,4 @@ COPY backend/ .
 
 EXPOSE 5000
 
-CMD ["node", "app.js"]
+CMD ["node", "-r", "dotenv/config", "app.js"]
