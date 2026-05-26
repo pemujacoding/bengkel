@@ -37,7 +37,7 @@ function renderJadwalTable(data) {
 }
 function handleSearchJadwal() {
     const query = document.getElementById("search-jadwal").value.toLowerCase().trim();
-    if(!query) { renderMekanikTable(allJadwal); return; }
+    if(!query) { renderJadwalTable(allJadwal); return; }
     const filtered = allJadwal.filter(m => j.id.toString() == query || j.judul.toLowerCase().includes(query) || j.tanggal.toLowerCase().includes(query));
     renderJadwalTable(filtered);
 }
