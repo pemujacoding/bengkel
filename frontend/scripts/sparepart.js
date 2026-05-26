@@ -51,6 +51,7 @@ async function goToSparepartDetailPage(id) {
         document.getElementById("det-s-id").innerText = s.id;
         document.getElementById("det-s-nama").innerText = s.nama_sparepart || s.nama;
         document.getElementById("det-s-merk").innerText = s.merk || "-";
+        document.getElementById("det-s-kategori").innerText = s.kategori || "-";
         document.getElementById("det-s-harga").innerText = `Rp ${Number(s.harga).toLocaleString("id-ID")}`;
         document.getElementById("det-s-stok").innerText = `${s.stok} Unit Tersedia`;
         document.getElementById("det-s-deskripsi").innerText = s.deskripsi || "Tidak ada deskripsi produk.";
@@ -74,8 +75,9 @@ function openSparepartModal() {
 function openEditSparepartModal(s) {
     document.getElementById("sparepart-modal-title").innerText = "Edit & Update Stok";
     document.getElementById("form-s-id").value = s.id;
-    document.getElementById("form-s-nama").value = s.nama_sparepart || s.nama || "";
+    document.getElementById("form-s-nama").value = s.nama || "";
     document.getElementById("form-s-merk").value = s.merk || "";
+    document.getElementById("form-s-kategori").value = s.kategori || "";
     document.getElementById("form-s-harga").value = s.harga || 0;
     document.getElementById("form-s-stok").value = s.stok || 0;
     document.getElementById("form-s-gambar").value = s.gambar || "";
@@ -87,8 +89,9 @@ async function saveSparepart(e) {
     e.preventDefault();
     const id = document.getElementById("form-s-id").value;
     const payload = {
-        nama_sparepart: document.getElementById("form-s-nama").value,
+        nama: document.getElementById("form-s-nama").value,
         merk: document.getElementById("form-s-merk").value,
+        kategori: document.getElementById("form-s-kategori").value,
         harga: Number(document.getElementById("form-s-harga").value),
         stok: Number(document.getElementById("form-s-stok").value),
         gambar: document.getElementById("form-s-gambar").value,
@@ -99,7 +102,7 @@ async function saveSparepart(e) {
         let url = id ? `${API_URL}/sparepart/${id}` : `${API_URL}/sparepart`;
         const res = await fetch(url, { method, headers: { "Content-Type": "application/json" }, body: JSON.stringify(payload) });
         if(res.ok) { bsSparepartModal.hide(); loadSparepart(); switchView('sparepart-list'); }
-    } catch (err) { console.error(err); }
+    } catch (err) { console.error(err);}
 }
 
 async function deleteSparepart(id) {
