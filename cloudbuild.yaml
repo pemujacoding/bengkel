@@ -4,11 +4,12 @@ steps:
     args:
       - "-c"
       - |
-        gcloud run deploy fluxfit-backend \
+        gcloud run deploy bengkel \
           --source . \
           --region asia-southeast2 \
           --port 5000 \
-          --allow-unauthenticated
+          --allow-unauthenticated \
+          
 timeout: "1600s"
 
 options:
