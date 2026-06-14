@@ -1,4 +1,4 @@
-const API_URL = "https://bengkel-226557433828.us-central1.run.app/data";
+const API_URL = "https://bengkel-39829692628.us-central1.run.app/data";
 
 
 let bsCustomerModal, bsMekanikModal, bsSparepartModal, bsRiwayatModal, bsServiceFormModal, bsTransaksiFormModal,bsSparepartServiceModal;
